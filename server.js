@@ -1,14 +1,23 @@
 var express = require('express'),
   app = express(),
 
-  port = process.env.PORT || 8081,
+  port = process.env.PORT || 8080,
   ip = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
   bodyParser = require('body-parser');
-  
 
-//try and repush code etc
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+global.globalDB= {
+
+    host: "ocvwlym0zv3tcn68.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    user: "z68y2hygelt8qwiz",
+    password: "jl02suxn9ect4xvd",
+    database: "ihggc75yu2xazf2p"
+
+}
+
 
 const path  = require('path');
 const VIEWS = path.join(__dirname,"views");
@@ -43,12 +52,12 @@ app.get('/img/:image_name', function(req, res) {
 });
 
 
-
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
+
 
 var routes = require('./backend/routes.js');
 routes(app);
@@ -76,9 +85,9 @@ app.post('/upload/:image_name', function (req, res, next) {
 
 
 
-app.listen(port,ip);
-
-
+var server=app.listen(port,ip);
 
 
 console.log('RESTful API server started on: ' + port);
+
+module.exports= server;

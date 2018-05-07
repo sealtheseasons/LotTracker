@@ -13,6 +13,8 @@
 </head>
 <body>
         <a href="http://www.sealtheseasons.com"><img class="header_pic" src="/img/logo.png"></a> 
+
+        <!--top nav bar-->
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -23,25 +25,34 @@
                 <li><a href="/views/searchByProduct.html">Search by Product</a></li>
                 <li><a href="/views/searchByState.html">Search by State</a></li>
                 <li><a href="/views/customer.html">Subscribe</a></li>
+                <li><a href="/views/admin.html">Admin Site</a></li>
                 </ul>
             </div>
         </nav>
         
         <section class='container'>
             <div class="row">
-                    <div class="col-md-6">
-                            <h1 class="heading" id="farm_name"></h1>
-                            <div id="farm_picture">
-                                <img id="picture" src="#" />
-                            </div>
-                            <h3 class="mini_title"> About the Farm</h3>
-                            <div id="farm_bio"></div>
-    
-                    </div>
-                    <div class="col-md-6">
-                        <div class="dummy-div"></div>
-                        <div style="padding-top:40px;" id="googleMap"></div>
-                    </div>
+
+                <!--left hand side of page-->
+                <div class="col-md-6">
+                        <!--name, picture and bio-->
+                        <h1 class="heading" id="farm_name"></h1>
+                        <div id="farm_picture">
+                            <img id="picture" src="#" />
+                        </div>
+                        <h3 class="mini_title"> About the Farm</h3>
+                        <div id="farm_bio"></div>
+
+                </div>
+
+                <!--right hand side of page-->
+                <div class="col-md-6">
+                    <!--for padding-->
+                    <div class="dummy-div"></div>
+
+                    <!--google map-->
+                    <div style="padding-top:40px;" id="googleMap"></div>
+                </div>
                     
                         
                     

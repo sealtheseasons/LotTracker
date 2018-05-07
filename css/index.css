@@ -27,7 +27,7 @@
     -webkit-border-radius: .5em; 
     -moz-border-radius: .5em;
     border-radius: .5em;
-    vertical-align: middle;
+    vertical-align: top;
     background:white;
     height: 60px;
     border: 2px solid #00AA66;
@@ -41,9 +41,7 @@
     display:block;
   }
 
-  .navbar{
-    border:none;
-  }
+ 
 
   .header_pic{
     padding:20px;
