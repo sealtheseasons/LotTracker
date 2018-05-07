@@ -24,15 +24,15 @@ $( document ).ready(function(){
 
 });
 
+/**get the farm that corresponds to the chosen state*/
 function getFarms(){
-    console.log(farm_state);
-    console.log(farm_name);
+
     var chosenState= $('#product_state').val();
     var state;
-    console.log("here");
+
     for (var key in farm_state) {
-        console.log(farm_state[key]);
-        console.log(chosenState);
+        
+        /**if the farms that go with a product matches the chosen state, append that farm*/
         if(farm_state[key]==chosenState){
             $('#possible_farms').append('<a onclick="setFarmResult('+key+')" class="state_option" href="/views/farmResult.html">' + farm_name[key]+'</a></div><br>');
 
@@ -49,14 +49,17 @@ function getFarms(){
 }
 
 
+/**this will return the states that correspond to each item_type selected*/
 function getStates(){
-    console.log("why wont you clear");
+
  
     farms=[];
     var states=[];
     farm_address={};
     farm_name={};
+
    var item_type_id = $('#product_dropdown').val();
+   /**clears state section when new product is selected*/
    $('#product_state').html("");
     var state=$('#product_state').val();
 
@@ -67,14 +70,18 @@ function getStates(){
          success: function(data) {
              $.each(data, function(i, farm)
              {
-                 console.log(farm);
+                
                 if(farm.farm_address != "blank address"){
+
+                    /**if the state is not publicated, add to array and append to state dropdown*/
                     if(states.indexOf(farm.farm_state)<0){
                         states.push(farm.farm_state);
 
                         $('#product_state').append("<option value='"+farm.farm_state+"'>"+farm.farm_state+"</option");
     
                     }
+
+                    /**if the name is not already in name section, add it as a possible farm*/
                     if (!(farm.farm_id in farm_name)){
                         $('#possible_farms').append('<a onclick="setFarmResult('+farm.farm_id+')" class="state_option" href="/views/farmResult.html">' + farm.farm_name+'</a></div><br/>');
 
@@ -97,6 +104,7 @@ function getStates(){
 
 }
 
+/**this function will return all item_types that exist in the database*/
 function getProducts(){
     $.ajax({
         type: 'GET',

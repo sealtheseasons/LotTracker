@@ -1,6 +1,7 @@
 var express = require('express'),
   app = express(),
 
+  //assigns port and ip address
   port = process.env.PORT || 8081,
   ip = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
   bodyParser = require('body-parser');
@@ -8,10 +9,11 @@ var express = require('express'),
 
 var db_config= require('./database_config.js');
 var db = require('mysql');
-//try and repush code etc
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+//sets testing database
 global.globalDB={
     host: "h7xe2knj2qb6kxal.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     user: "o1p4jl162g2mmn5y",
@@ -19,7 +21,7 @@ global.globalDB={
     database: "qba5flb42gpskk2s"
 };
 
-
+//these will be used for path naviagtion
 const path  = require('path');
 const VIEWS = path.join(__dirname,"views");
 const js = path.join(__dirname,"js");
@@ -31,6 +33,8 @@ bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+
+//the following get functions all work the same: they take the file from its specified folder, which is linked by the above path navigation
 app.get('/', function(req, res) {
   res.sendFile('index.html',{root:VIEWS});
 });
@@ -60,13 +64,16 @@ app.use(function(req, res, next) {
     next();
 });
 
+//this specifies our routes (middlemen) for the application
+
 var routes = require('./backend/routes.js');
 routes(app);
 
 
-
+//used for picture upload
 var multer= require('multer');
 
+//temporary image storage
 var storage = multer.diskStorage({
   destination: function (req, file, callback) {
      callback(null, "./img");
@@ -78,6 +85,7 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage: storage }).single('file');
 
+//post function that will be called every time a new farm is input into the database
 app.post('/upload/:image_name', function (req, res, next) {
   upload(req, res, function(err) {
     targetPath = path.resolve('./uploads/image.png');
@@ -88,7 +96,7 @@ app.post('/upload/:image_name', function (req, res, next) {
 
 
 
-
+//app will listen on a port
 var server= app.listen(port,ip);
 
 module.exports= server;

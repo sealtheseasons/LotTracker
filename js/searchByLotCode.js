@@ -1,9 +1,9 @@
-//global variables
+
 
 
 $( document ).ready(function(){
 
-    //when submit button is clicked, find farm
+    /**when submit button is clicked, find farm*/
     $("#enterLotNumber").click(function(){
             findFarm();
     });
@@ -12,15 +12,15 @@ $( document ).ready(function(){
 });
 
 
-//this function will help return the farm based on entered retail lot number
+/**this function will help return the farm based on entered retail lot number*/
 function findFarm(){
 
-    //gets user input for lot number
+    /**gets user input for lot number*/
     var lotNumber = $("#lotNumber").val();
     
     if(lotNumber!=""){
 
-        //makes call to return farm based on entered lot number
+        /**makes call to return farm based on entered lot number*/
         $.ajax({
             type: 'GET',
             datatype: 'jsonp',
@@ -30,10 +30,10 @@ function findFarm(){
                         alert("We could not find this lot number. Please double check!");
                   }else{
     
-                      //use this farm id on the next page to get info
+                      /**use this farm id on the next page to get info*/
                         window.localStorage.setItem("farm",data[0].farm_id);
     
-                        //redirect to farm result page
+                        /**redirect to farm result page*/
                         window.location.href = "/views/farmResult.html";
                   }
               

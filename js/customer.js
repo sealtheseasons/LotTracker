@@ -1,23 +1,23 @@
 $( document ).ready(function(){
 
-    //execute when "subscribe" button is clicked
+    /**execute when "subscribe" button is clicked*/
     $(document).on('click','#create_new_customer',function(){
          add_customer();
     });
 
  });
  
- //this function will add a new customer to the database
+ /**this function will add a new customer to the database*/
  function add_customer(){
 
-    //variables assigned from text inputs on customer.html
+    /**variables assigned from text inputs on customer.html*/
      var first_name=$('#first_name').val();
      var last_name=$('#last_name').val();
      var email=$('#email').val();
 
-     //no values here can be left blank
+     /**no values here can be left blank*/
      if(first_name!="" && last_name!="" && email!=""){
-        //this ajax call will make sure that the given email does not already exist in database. Must be unique
+        /**this ajax call will make sure that the given email does not already exist in database. Must be unique*/
         $.ajax({
             type: 'GET',
             datatype: 'jsonp',
@@ -29,7 +29,7 @@ $( document ).ready(function(){
 
                 }else{
 
-                    //if email does not exist in database, this ajax function will add new subscriber
+                    /**if email does not exist in database, this ajax function will add new subscriber*/
                     $.ajax({
                         type: 'POST',
                         datatype: 'jsonp',
