@@ -17,7 +17,7 @@ function findFarm(){
 
     /**gets user input for lot number*/
     var lotNumber = $("#lotNumber").val();
-    
+
     if(lotNumber!=""){
 
         /**makes call to return farm based on entered lot number*/
@@ -29,24 +29,25 @@ function findFarm(){
                   if(data.length<1){
                         alert("We could not find this lot number. Please double check!");
                   }else{
-    
+
                       /**use this farm id on the next page to get info*/
                         window.localStorage.setItem("farm",data[0].farm_id);
-    
+
                         /**redirect to farm result page*/
                         window.location.href = "/views/farmResult.html";
                   }
-              
+
             },
             error: function (xhr, status, error) {
+              alert("We could not find this lot number. Please double check!");
                 console.log("Error : "+ error);
             }
-        
+
           });
     } else {
         alert("Please enter a lot number before you search!");
     }
-    
-    
+
+
 
 }
