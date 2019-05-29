@@ -25,6 +25,7 @@ function getFarm(){
                 
                 /**on success, the farm data will be added to the farm result page*/
                 $("#farm_name").text(data[0].farm_name);
+                $("#mini_farm").text("About "+data[0].farm_name);
                 $("#farm_bio").append("<p>"+data[0].farm_bio+"</p>");
             
                 var farm_image=data[0].farm_name.replace(/\s/g, '');
