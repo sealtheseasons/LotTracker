@@ -39,7 +39,7 @@ function getAvailableStates(){
                                 var noSpaceState2= (state.farm_state).replace(/\s+/g, '');
                               
                                 /**lists farm under the appropriate state in accodion div*/
-                                $('#'+noSpaceState2).append('<a onclick="setFarmResult('+farm.farm_name+')" class="state_option" href="/views/farmResult.html">' + farm.farm_name+'</a></div><br/>');
+                                $('#'+noSpaceState2).append('<a onclick="setFarmResult('+farm.farm_id+')" class="state_option" href="/views/farmResult.html">' + farm.farm_name+'</a></div><br/>');
                             
                             });
                             
