@@ -88,6 +88,6 @@ function getAvailableStates(){
     
 }
  /**this will set the farm id into local storage */
-function setFarmResult(farm_name){
-    window.localStorage.setItem("farm",farm_name);
+function setFarmResult(farm_id){
+    window.localStorage.setItem("farm",farm_id);
 }
