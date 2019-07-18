@@ -1,6 +1,10 @@
-@font-face{
-  src:url(/fonts/LuloCleanOneBold.otf);
-  font-family:LuloCleanOneBold;
+@font-face {
+src: local('../views/LuloCleanOneBold.ttf'),url('../views/LuloCleanOneBold.ttf');
+font-family: LuloCleanOneBold;
+}
+@font-face {
+src: local('../views/Museo_Slab_100.otf'),url('../views/Museo_Slab_100.otf');
+font-family: Museo_Slab_100;
 }
 
 #googleMap {
@@ -55,9 +59,16 @@
 
   .heading {
     color: #136E33;
-    font-family:LuloCleanOneBold;
+    font-family: LuloCleanOneBold;
   }
-  
+  .subheading,.state_option,#farm_bio{
+font-family: Museo_Slab_100;
+  }
+  .large_button,.accordion-head,.mini_title{
+    font-family: LuloCleanOneBold;
+    width:auto;
+  }
+
 
 
   #farm_bio{
