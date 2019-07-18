@@ -1,16 +1,8 @@
 @font-face{
-  src:url(LotTracker/fonts/LuloCleanOneBold.otf) format("otf");
+  src:url(LuloCleanOneBold.otf) format("otf");
   font-family:LuloCleanOneBold;
 }
-@font-face{
-  src:url(fonts/AlexBrush-Regular.ttf);
-  font-family:AlexBrush-Regular;
-}
 
-@font-face{
-  src:url(LotTracker/fonts/Museo_Slab_100.otf) format('otf');
-  font-family:Museo_Slab_100;
-}
 #googleMap {
     width: 100%;
     height: 700px;
@@ -65,9 +57,7 @@
     color: #136E33;
     font-family:LuloCleanOneBold;
   }
-  .subheading {
-    font-family:Museo_Slab_100;
-  }
+  
 
 
   #farm_bio{
