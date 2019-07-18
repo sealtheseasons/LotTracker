@@ -1,3 +1,16 @@
+@font-face{
+  src:url(LotTracker/fonts/LuloCleanOneBold.otf);
+  font-family:LuloCleanOneBold;
+}
+@font-face{
+  src:url(fonts/AlexBrush-Regular.ttf);
+  font-family:AlexBrush-Regular;
+}
+
+@font-face{
+  src:url(LotTracker/fonts/Museo_Slab_100.otf);
+  font-family:Museo_Slab_100;
+}
 #googleMap {
     width: 100%;
     height: 700px;
@@ -15,7 +28,7 @@
     display: inline-block;
     zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
     *display: inline;
-   
+
     margin: 0 2px;
     outline: none;
     cursor: pointer;
@@ -24,7 +37,7 @@
     font-size: 20px;
     padding: .5em 2em .55em;
     text-shadow: 0 1px 1px rgba(0,0,0,.3);
-    -webkit-border-radius: .5em; 
+    -webkit-border-radius: .5em;
     -moz-border-radius: .5em;
     border-radius: .5em;
     vertical-align: top;
@@ -36,20 +49,24 @@
  }
   .state_option {
     font-size:20px;
-    
+
     color: #136E33;
     display:block;
   }
 
- 
+
 
   .header_pic{
     padding:20px;
     padding-left: 75px;
   }
 
-  .heading {
+  .heading#tiktok {
     color: #136E33;
+    font-family:LuloCleanOneBold;
+  }
+  .subheading {
+    font-family:Museo_Slab_100;
   }
 
 
@@ -149,11 +166,11 @@ label{
   .farm_class{
     overflow:auto;
     height:300px;
-    
+
     padding-left:15px;
   }
 
   .farm_results{
     display: none;
-    
+
   }
