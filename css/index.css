@@ -1,5 +1,5 @@
 @font-face{
-  src:url(LotTracker/fonts/LuloCleanOneBold.otf);
+  src:url(LotTracker/fonts/LuloCleanOneBold.otf) format("otf");
   font-family:LuloCleanOneBold;
 }
 @font-face{
@@ -8,7 +8,7 @@
 }
 
 @font-face{
-  src:url(LotTracker/fonts/Museo_Slab_100.otf);
+  src:url(LotTracker/fonts/Museo_Slab_100.otf) format('otf');
   font-family:Museo_Slab_100;
 }
 #googleMap {
